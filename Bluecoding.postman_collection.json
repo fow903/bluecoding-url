@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "9878dde5-fe16-4222-8ddf-c5746cf14050",
+		"name": "Bluecoding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32027275"
+	},
+	"item": [
+		{
+			"name": "Shorten URL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://meet.google.com/?authuser=0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/shorten_url/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"shorten_url",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Visited Urls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/top_visited_urls/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"top_visited_urls",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
