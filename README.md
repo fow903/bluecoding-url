@@ -54,3 +54,6 @@ Contributions to this project are welcome! Please follow the [contribution guide
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+Check the postman collection in the repo folder
