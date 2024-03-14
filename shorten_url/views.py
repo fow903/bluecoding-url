@@ -1,4 +1,3 @@
-import json
 from django.shortcuts import redirect
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -11,6 +10,7 @@ def shorten_url(request):
     if request.method == 'POST':
         try:
             original_url = request.data.get('original_url')
+
             if original_url is None:
                 return invalid_response('original_url is required', status.HTTP_400_BAD_REQUEST)
             
@@ -48,7 +48,6 @@ def get_original_url(request, **kwargs):
         try:
             shortened_url = kwargs.get('shortened_url')
             shorten_url_obj = ShortenUrl.objects.get(shorten_url__contains=shortened_url)
-            print(shorten_url_obj)
             shorten_url_obj.visit_count += 1
             shorten_url_obj.save()
             return redirect(shorten_url_obj.original_url)

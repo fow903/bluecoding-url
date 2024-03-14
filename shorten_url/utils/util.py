@@ -1,4 +1,5 @@
 import hashlib
+import os
 from bs4 import BeautifulSoup
 import requests
 from rest_framework import status
@@ -7,9 +8,7 @@ from rest_framework.response import Response
 def shorten_url_convert(original_url):
     hash_object = hashlib.md5(original_url.encode())
     hash_hex = hash_object.hexdigest()[:6]
-    # dotenv get url from env
-    shortened_url = f'http://127.0.0.1:8000/s/{hash_hex}'
-    print(shortened_url)
+    shortened_url = f'{os.environ.get("SHORTEN_URL")}/s/{hash_hex}'
     return shortened_url
 
 def valid_reponse(data, status=status.HTTP_200_OK):
